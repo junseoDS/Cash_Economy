@@ -17,11 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
-
+from . import views
+app_name = 'login'
 
 urlpatterns = [
-
-    path('admin/', admin.site.urls),
-    path('login/', include('login.urls')),
-    url(r'^$', TemplateView.as_view(template_name='index.html'))
+    path('', views.index, name='index'),
 ]
