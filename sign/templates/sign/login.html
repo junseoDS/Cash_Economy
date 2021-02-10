@@ -41,10 +41,16 @@
     <h1 class="h3 mb-3 fw-normal">로그인</h1>
     {%  endif %}
 
-    <label for="user_id" class="visually-hidden">ID</label>
-    <input type="text" id="user_id" class="form-control" placeholder="ID" required autofocus>
-    <label for="user_pw" class="visually-hidden">Password</label>
-    <input type="password" id="user_pw" class="form-control" placeholder="Password" required>
+    <label for="input_id" class="visually-hidden">ID</label>
+    <input type="text"
+           id="input_id"
+           name="user_id"
+           class="form-control" placeholder="ID" required autofocus>
+    <label for="input_pw" class="visually-hidden">Password</label>
+    <input type="password"
+           id="input_pw"
+           name="user_pw"
+           class="form-control" placeholder="Password" required>
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Remember me

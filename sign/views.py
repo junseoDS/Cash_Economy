@@ -38,7 +38,7 @@ def signup(request):
 
 def signup_process(request):
     u_id = request.POST['user_id']
-    u_email = request.POST['email']
+    u_email = request.POST['user_email']
     u_password1 = request.POST['user_pw']
     u_password2 = request.POST['user_pw_re']
 
@@ -57,8 +57,8 @@ def signup_process(request):
         user = User.objects.create_user(username=u_id, password=u_password1)
         auth.login(request, user)
         user_dict = {
-            'user_id': user.id,
-            'user_name': user.username
+            'u_id': user.id,
+            'u_name': user.username
         }
         request.session['loginObj'] = user_dict
         return redirect('home')

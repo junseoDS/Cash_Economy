@@ -60,11 +60,13 @@
     <img src="/static/img/wc_h.png">
 
     <p class="lead">
-        <br>
-{#      <a href="{% url 'login:index' %}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">로그인</a>#}
-{#      <a href="{% url 'signup:index' %}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">회원가입</a>#}
+        {% if request.session.loginObj %}
+        <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">기사보기</a>
+        <a href="/sign/logout" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Logout</a>
+        {% else %}
         <a href="/sign/login" class="btn btn-lg btn-secondary fw-bold border-white bg-white">로그인</a>
         <a href="/sign/signup" class="btn btn-lg btn-secondary fw-bold border-white bg-white">회원가입</a>
+        {% endif %}
 
 
     </p>
