@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block html_header %}
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/signin.css" rel="stylesheet">
+    <script src="/static/js/users.js"></script>
+
+{% endblock %}
+{% block html_body %}
+  <body body class="d-flex h-100 text-center text-white bg-dark">
+    
+<main class="form-signin">
+  <form action="/sign/loginProcess/" method="post">
+    <h1 class="h3 mb-3 fw-normal"> Cash Economy</h1>
+    <p> Please sign in</p>
+
+
+    {% csrf_token %}
+
+    {%  if err_msg %}
+    <h1 class="h3 mb-3 fw-normal">{{ err_msg }}</h1>
+    {% else %}
+    <h1 class="h3 mb-3 fw-normal">로그인</h1>
+    {%  endif %}
+
+    <label for="user_id" class="visually-hidden">ID</label>
+    <input type="text" id="user_id" class="form-control" placeholder="ID" required autofocus>
+    <label for="user_pw" class="visually-hidden">Password</label>
+    <input type="password" id="user_pw" class="form-control" placeholder="Password" required>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021.02</p>
+  </form>
+</main>
+
+
+    
+  </body>
+</html>
+{% endblock %}
